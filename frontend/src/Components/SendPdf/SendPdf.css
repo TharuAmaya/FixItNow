@@ -1,0 +1,120 @@
+:root{
+  --primary:#0A1E54;   /* 60 */
+  --secondary:#C8B39B; /* 30 */
+  --accent:#F8EFE5;    /* 10 */
+  --ink:#0B1220;
+  --muted:#6b7280;
+  --surface:#ffffff;
+  --surface-2:#f7f8fb;
+  --border:#e5e7eb;
+  --shadow:0 6px 14px rgba(0,0,0,0.06), 0 24px 48px rgba(0,0,0,0.08);
+  --r-lg:14px; --r-md:10px; --r-sm:8px;
+}
+
+/* Page shell */
+.sp-root{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(200,179,155,0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(10,30,84,0.12), transparent 60%),
+    var(--surface-2);
+  color:var(--ink);
+  font-family:ui-sans-serif, system-ui, Inter, Segoe UI, Roboto, Arial;
+}
+.sp-container{ padding:12px 16px 24px; max-width:1100px; margin:0 auto; }
+
+/* Hero/banner */
+.sp-hero{
+  position:relative; height:140px; border-radius:var(--r-lg);
+  overflow:hidden; margin:8px 0 12px;
+  background:linear-gradient(120deg, rgba(10,30,84,0.85), rgba(10,30,84,0.55));
+}
+.sp-hero::after{
+  content:""; position:absolute; inset:0;
+  background:url('https://i.pinimg.com/1200x/95/6b/9f/956b9f84ec42f3ab8c608b65ecb861bd.jpg') center/cover no-repeat;
+  mix-blend-mode:luminosity; opacity:.35;
+}
+
+/* Titles */
+.sp-title{
+  margin:8px 0 6px; padding:10px 14px;
+  font-size:22px; font-weight:800; color:var(--primary);
+  background:linear-gradient(180deg, rgba(248,239,229,0.9), rgba(248,239,229,0.5));
+  border:1px solid #efe5d8; border-radius:var(--r-md);
+}
+.sp-subtitle{ margin:0 0 12px; color:var(--muted); font-weight:600; }
+
+/* Grid layout: left form, right preview */
+.sp-grid{
+  display:grid; gap:16px; grid-template-columns: 1fr 1.2fr;
+}
+@media (max-width: 1000px){
+  .sp-grid{ grid-template-columns: 1fr; }
+}
+
+/* Cards */
+.sp-card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-lg); box-shadow:var(--shadow);
+  padding:16px; box-sizing:border-box; overflow:hidden;
+}
+
+/* Form */
+.sp-form{
+  display:grid; gap:12px;
+  grid-template-columns: 1fr;
+}
+.sp-label{ font-size:12px; color:var(--muted); margin-bottom:4px; display:block; }
+.sp-input{
+  width:100%; padding:10px 12px; border-radius:var(--r-sm);
+  border:1px solid #d1d5db; background:var(--surface);
+  transition:border-color .2s, box-shadow .2s, background .2s;
+  box-sizing:border-box; min-width:0;
+}
+.sp-input:focus{
+  outline:none; border-color:var(--secondary); background:#fff;
+  box-shadow:0 0 0 3px rgba(200,179,155,.25);
+}
+.sp-actions{ display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+.sp-btn{
+  padding:10px 12px; border-radius:var(--r-md); cursor:pointer;
+  border:1px solid var(--border); background:var(--surface); color:var(--ink);
+  transition:transform .05s, box-shadow .2s, background .2s, border-color .2s;
+}
+.sp-btn:active{ transform:translateY(1px); }
+.sp-btn:hover{ background:var(--accent); border-color:var(--secondary); }
+.sp-btn-primary{ border:1px solid var(--primary); background:var(--primary); color:#fff; }
+
+/* List of PDFs */
+.sp-list{
+  display:grid; gap:10px; margin-top:10px;
+}
+.sp-item{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:10px; border:1px solid var(--border); border-radius:var(--r-md); background:#fff;
+}
+.sp-item-title{
+  font-weight:700; color:var(--primary); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+}
+.sp-item-actions{ display:flex; gap:8px; }
+.sp-link-btn{
+  display:inline-block; padding:8px 10px; border-radius:10px; text-decoration:none;
+  border:1px solid var(--primary); color:var(--primary); background:var(--surface);
+}
+.sp-link-btn:hover{ background:var(--accent); border-color:var(--secondary); }
+
+/* Preview panel */
+.sp-preview{
+  height: 72vh; min-height:420px; background:#fff; border:1px solid var(--border);
+  border-radius:var(--r-lg); box-shadow:var(--shadow); padding:12px; overflow:auto;
+}
+.sp-preview-empty{
+  height:100%; display:grid; place-items:center; color:var(--muted);
+}
+.sp-preview-empty svg{ display:block; }
+
+/* States */
+.sp-state{ color:var(--muted); }
+
+/* Helper divider */
+.hr-soft{ border:0; height:1px; background:linear-gradient(to right, transparent, var(--border), transparent); margin:8px 0; }

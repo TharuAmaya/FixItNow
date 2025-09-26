@@ -1,0 +1,126 @@
+:root{
+  --primary:#0A1E54;   /* 60 */
+  --secondary:#C8B39B; /* 30 */
+  --accent:#F8EFE5;    /* 10 */
+  --ink:#0B1220;
+  --muted:#6b7280;
+  --surface:#ffffff;
+  --surface-2:#f7f8fb;
+  --border:#e5e7eb;
+  --shadow:0 6px 14px rgba(0,0,0,0.06), 0 24px 48px rgba(0,0,0,0.08);
+  --r-lg:14px; --r-md:10px; --r-sm:8px;
+}
+
+/* Page */
+.mta-root{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(200,179,155,0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(10,30,84,0.12), transparent 60%),
+    var(--surface-2);
+  color:var(--ink);
+  font-family:ui-sans-serif, system-ui, Inter, Segoe UI, Roboto, Arial;
+}
+.mta-container{ padding:12px 16px 24px; max-width:980px; margin:0 auto; }
+
+/* Hero */
+.mta-hero{
+  position:relative; height:140px; border-radius:var(--r-lg);
+  overflow:hidden; margin:8px 0 12px;
+  background:linear-gradient(120deg, rgba(10,30,84,0.85), rgba(10,30,84,0.55));
+}
+.mta-hero::after{
+  content:""; position:absolute; inset:0;
+  background:url('https://i.pinimg.com/1200x/a1/f1/51/a1f15154e6b5f7e8ae9825ac5d47b93f.jpg') center/cover no-repeat;
+  mix-blend-mode:luminosity; opacity:.35;
+}
+
+/* Titles */
+.mta-title{
+  margin:8px 0 6px; padding:10px 14px;
+  font-size:22px; font-weight:800; color:var(--primary);
+  background:linear-gradient(180deg, rgba(248,239,229,0.9), rgba(248,239,229,0.5));
+  border:1px solid #efe5d8; border-radius:var(--r-md);
+}
+.mta-subtitle{
+  margin:0 0 12px; color:var(--muted); font-weight:600;
+}
+
+/* Card */
+.mta-card{
+  background:var(--surface); border:1px solid var(--border);
+  border-radius:var(--r-lg); box-shadow:var(--shadow);
+  padding:16px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+
+/* Form grid (robust, no overflow) */
+.mta-form{
+  display:grid; gap:12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  box-sizing:border-box;
+}
+.col-span-2{ grid-column: 1 / -1; }
+
+@media (max-width: 600px){
+  .mta-form{ grid-template-columns: 1fr; }
+}
+
+/* Labels and inputs */
+.mta-label{
+  font-size:12px; color:var(--muted); margin-bottom:4px; display:block;
+  word-break: break-word;
+}
+.mta-field{
+  width:100%; padding:10px 12px; border-radius:var(--r-sm);
+  border:1px solid #d1d5db; background:var(--surface);
+  transition:border-color .2s, box-shadow .2s, background .2s;
+  box-sizing:border-box;
+  min-width:0;
+}
+.mta-field:focus{
+  outline:none; border-color:var(--secondary); background:#fff;
+  box-shadow:0 0 0 3px rgba(200,179,155,.25);
+}
+
+/* Select and disabled placeholder color */
+.mta-field:has(option[disabled]:checked){ color:#9aa0a6; }
+.mta-field option{
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+
+/* Inline help/error */
+.mta-help{ font-size:12px; color:var(--muted); }
+.mta-error{ font-size:13px; color:#b42318; }
+
+/* Buttons */
+.mta-actions{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px; }
+.mta-btn{
+  padding:10px 12px; border-radius:var(--r-md); cursor:pointer;
+  border:1px solid var(--border); background:var(--surface); color:var(--ink);
+  transition:transform .05s, box-shadow .2s, background .2s, border-color .2s;
+}
+.mta-btn:active{ transform:translateY(1px); }
+.mta-btn:hover{ background:var(--accent); border-color:var(--secondary); }
+.mta-btn-primary{ border:1px solid var(--primary); background:var(--primary); color:#fff; }
+
+/* State blocks */
+.mta-state{ padding:16px 0; color:var(--muted); }
+.mta-state svg{ display:block; margin:0; }
+
+/* Technician select row helper */
+.mta-row{ display:flex; align-items:center; gap:8px; min-width:0; }
+
+/* Accessibility focus for buttons/links */
+a.mta-btn, a.mta-btn:link, a.mta-btn:visited{ text-decoration:none; }
+a.mta-btn:focus{ outline:none; text-decoration:none; box-shadow:0 0 0 3px rgba(200,179,155,.35); border-color:var(--secondary); }
+
+/* Success toast (basic) */
+.mta-toast{
+  position:fixed; bottom:16px; right:16px; background:#0a1e54;
+  color:#fff; padding:10px 14px; border-radius:12px; box-shadow:var(--shadow);
+}
+
+/* Helper divider */
+.hr-soft{ border:0; height:1px; background:linear-gradient(to right, transparent, var(--border), transparent); margin:8px 0; }

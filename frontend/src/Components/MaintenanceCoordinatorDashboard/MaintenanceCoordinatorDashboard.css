@@ -1,0 +1,315 @@
+:root {
+  --primary: #0A1E54;      /* 60 */
+  --secondary: #C8B39B;    /* 30 */
+  --accent: #F8EFE5;       /* 10 */
+  --ink: #0B1220;
+  --muted-ink: #6b7280;
+  --surface: #ffffff;
+  --surface-2: #f7f8fb;
+  --border: #e5e7eb;
+  --shadow-1: 0 6px 14px rgba(0,0,0,0.06), 0 24px 48px rgba(0,0,0,0.08);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+  --radius-sm: 8px;
+}
+
+/* Page shell */
+.mcd-root {
+  min-height: 100vh;
+  background:
+    radial-gradient(1200px 600px at 85% -10%, rgba(200,179,155,0.18), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(10,30,84,0.12), transparent 60%),
+    var(--surface-2);
+  color: var(--ink);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Top bar spacing around Nav */
+.mcd-container {
+  padding: 12px 16px 0;
+}
+
+/* Title */
+.mcd-title {
+  margin: 8px 0 12px;
+  padding: 10px 14px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  color: var(--primary);
+  background: linear-gradient(180deg, rgba(248,239,229,0.9), rgba(248,239,229,0.5));
+  border: 1px solid #efe5d8;
+  border-radius: var(--radius-md);
+}
+
+/* Layout */
+.mcd-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+  height: 78vh;
+  padding: 0 0 16px;
+}
+
+@media (max-width: 1100px) {
+  .mcd-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+/* Calendar card */
+.mcd-calendar-card {
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  overflow: hidden;
+}
+
+/* Right profile panel */
+.mcd-aside {
+  position: sticky;
+  top: 80px;
+  align-self: start;
+  height: calc(78vh - 0px);
+  overflow: auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: 14px;
+}
+
+@media (max-width: 1100px) {
+  .mcd-aside {
+    position: static;
+    height: auto;
+  }
+}
+
+/* Aside header */
+.mcd-aside-header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #eee;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+/* Avatar */
+.mcd-avatar-wrap {
+  text-align: center;
+}
+
+.mcd-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eef2ff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* Inputs and labels */
+.mcd-label {
+  font-size: 12px;
+  color: var(--muted-ink);
+}
+
+.mcd-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #d1d5db;
+  background: var(--surface);
+  transition: border-color .2s, box-shadow .2s;
+}
+.mcd-input:focus {
+  outline: none;
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(200,179,155,0.25);
+}
+
+/* Readonly field */
+.mcd-field {
+  margin-bottom: 10px;
+}
+.mcd-field-label {
+  font-size: 12px;
+  color: var(--muted-ink);
+  margin-bottom: 2px;
+}
+.mcd-field-value {
+  font-weight: 600;
+}
+
+/* Buttons */
+.mcd-btn {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: transform .05s ease, box-shadow .2s ease, background-color .2s, color .2s, border-color .2s;
+  user-select: none;
+}
+.mcd-btn:active {
+  transform: translateY(1px);
+}
+
+.mcd-btn-primary {
+  flex: 1;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #fff;
+}
+.mcd-btn-primary[disabled] {
+  opacity: 0.7;
+}
+.mcd-btn-ghost {
+  flex: 1;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--ink);
+}
+.mcd-btn-ghost:hover {
+  border-color: var(--secondary);
+  background: var(--accent);
+}
+
+/* Button group */
+.mcd-btn-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Alerts/loading */
+.mcd-loading {
+  padding: 0 16px;
+  color: var(--ink);
+}
+.mcd-error {
+  padding: 0 16px;
+  color: #b42318;
+}
+
+/* RBC theming */
+.rbc-calendar {
+  --rbc-bg: var(--surface);
+  --rbc-grid: #e9edf4;
+  --rbc-header-bg: #0A1E54;
+  --rbc-header-ink: #ffffff;
+  --rbc-today: rgba(200,179,155,0.18);
+  --rbc-selected: rgba(10,30,84,0.14);
+}
+
+.rbc-toolbar {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(10,30,84,0.08), transparent 70%);
+}
+.rbc-toolbar .rbc-toolbar-label {
+  font-weight: 700;
+  color: var(--primary);
+}
+.rbc-btn-group > button {
+  border-radius: 8px !important;
+  border: 1px solid var(--border) !important;
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+.rbc-btn-group > button:hover {
+  background: var(--accent) !important;
+  border-color: var(--secondary) !important;
+}
+.rbc-active {
+  background: var(--primary) !important;
+  color: #fff !important;
+  border-color: var(--primary) !important;
+}
+
+.rbc-time-view, .rbc-month-view {
+  background: var(--surface);
+}
+.rbc-time-header, .rbc-month-header {
+  background: var(--primary);
+  color: var(--rbc-header-ink);
+}
+.rbc-header {
+  background: transparent;
+  border: none;
+  color: var(--rbc-header-ink);
+  padding: 6px 8px;
+  font-weight: 700;
+}
+.rbc-time-content, .rbc-month-row, .rbc-day-bg, .rbc-timeslot-group {
+  border-color: var(--rbc-grid) !important;
+}
+.rbc-today {
+  background-color: var(--rbc-today) !important;
+}
+.rbc-event {
+  border: none !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+.rbc-selected-cell {
+  background: var(--rbc-selected) !important;
+}
+.rbc-time-slot {
+  transition: background-color .15s ease;
+}
+.rbc-time-slot:hover {
+  background: rgba(10,30,84,0.06);
+}
+
+/* Resource column (technician lanes) */
+.rbc-time-header-content {
+  border-left: 1px solid var(--rbc-grid);
+}
+.rbc-time-gutter, .rbc-header-gutter {
+  background: rgba(10,30,84,0.04);
+  color: #223150;
+}
+
+/* Helper: subtle separators for cards */
+.hr-soft {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border), transparent);
+  margin: 8px 0;
+}
+
+/* Accent chips */
+.chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #5b4a38;
+  border: 1px solid rgba(200,179,155,0.6);
+}
+
+/* Optional hero/banner container if needed */
+.mcd-hero {
+  position: relative;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 12px;
+  background: linear-gradient(120deg, rgba(10,30,84,0.85), rgba(10,30,84,0.55));
+}
+.mcd-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://i.pinimg.com/1200x/5c/f8/37/5cf83737e49492f34b30428d7c2d9d6a.jpg') center/cover no-repeat;
+  mix-blend-mode: luminosity;
+  opacity: 0.35;
+}
