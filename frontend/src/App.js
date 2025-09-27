@@ -45,14 +45,14 @@ function App() {
           <Route path="/notifications" element={<Notifications />} />
           <Route path="/logout" element={<Logout />} />
 
-          <Route path="/" element={<TechnicianDashboard />} />
+          {/*<Route path="/" element={<TechnicianDashboard />} />*/}
           <Route path="/tech-dashboard" element={<TechnicianDashboard />} />
           <Route path="/tech-overview" element={<TechTaskOverview />} />
           <Route path="/tech-overview/:id" element={<TaskDetails />} />
           <Route path="/tech-notifications" element={<TechNotifications />} />
           <Route path="/tech-logout" element={<TechLogout />} />
 
-          {/*<Route path="/" element={<Home />} />*/}
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/request" element={<div>Maintenance Request Page (To be implemented)</div>} />
