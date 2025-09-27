@@ -1,0 +1,170 @@
+.sup-container {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ebe9e68c;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.sup-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sup-top-bar h1 {
+  
+  font-size: 28px;
+  color: #333;
+}
+
+.sup-topright {
+  background-color: #0a1e54;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 150px;   
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.sup-topright:hover {
+  background-color: #546475;
+}
+
+
+.sup-search-bar {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+  width:600px;
+  height:35px;
+}
+
+.sup-search-bar input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  width:5px;
+  transition: border-color 0.3s ease;
+}
+
+.sup-search-bar input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.sup-supplier-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sup-supplier-table th,
+.sup-supplier-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.sup-supplier-table th {
+  background-color: #1e293b;
+  color: #fff;
+  font-weight: 600;
+}
+
+.sup-supplier-table tr:hover {
+  background-color: #f1f7ff;
+  transition: background-color 0.2s ease;
+}
+
+.sup-container p {
+  font-size: 16px;
+  color: #777;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sup-download-btn {
+  margin-top: 20px;
+  background-color: #0a1e54 !important; 
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  width: 170px;   
+  height: 40px;
+  transition: background-color 0.3s ease;
+}
+
+.sup-download-btn:hover {
+  background-color: #546475 !important;
+}
+
+.sup-supplier-table tr:nth-child(odd) {
+  background-color: #ececec1f; 
+}
+
+.sup-supplier-table tr:nth-child(even) {
+  background-color: #f5f4f3; 
+}
+
+
+.sup-supplier-table tr:hover {
+  background-color: #f1f7ff;
+}
+
+
+@media (max-width: 1024px) {
+  .sup-container {
+    padding: 15px;
+  }
+
+  .sup-top-bar h1 {
+    font-size: 24px;
+  }
+
+  .sup-search-bar input {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .sup-supplier-table th,
+  .sup-supplier-table td {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sup-supplier-table {
+    font-size: 13px;
+  }
+
+  .sup-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .sup-search-bar {
+    flex-direction: column;
+  }
+
+  .sup-download-btn {
+    width: 100%;
+  }
+}

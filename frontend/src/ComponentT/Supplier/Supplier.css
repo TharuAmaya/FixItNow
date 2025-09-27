@@ -1,0 +1,130 @@
+.supplier-table-container {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 95%;
+  overflow-x: auto;
+}
+
+.container {
+  position: relative;
+  max-width: 95%;
+  margin:60px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.topright {
+  position: absolute;
+  top: 20px;  
+  right: 100px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #111827;
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+.supplier-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 60px; 
+}
+.supplier-table th, .supplier-table td {
+  border: 1px solid #d8dde6;
+  padding: 10px;
+  text-align: left;
+}
+
+.supplier-table {
+  width: 50%;
+  max-width: 1000px;
+  margin: 70px auto; 
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.supplier-table thead {
+  background-color: #e5e4e2;
+  color: #3a3b3c;
+  text-align: left;
+  text-align: center;
+}
+
+.supplier-table th {
+  padding: 12px 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.supplier-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  color:#3a3b3c
+}
+.supplier-table tbody tr:hover {
+  background-color: #f5faff;
+  transition: 0.2s ease-in-out;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center; 
+  gap: 5px;
+}
+
+.action-buttons button {
+  flex: none; 
+}
+
+
+.update-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 7px;
+  cursor: pointer;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 8px;
+  cursor: pointer;
+  margin-left: 5px; 
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+
+
+
+/* Responsive small screens */
+@media (max-width: 768px) {
+  .supplier-table th,
+  .supplier-table td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .supplier-table button {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}

@@ -1,0 +1,141 @@
+
+#supplierForm {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#supplierForm h1,
+div > h1 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#supplierForm label {
+  display: block;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+/* Required  */
+.req {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+/* Inputs and textarea */
+#supplierForm input[type="text"],
+#supplierForm input[type="tel"],
+#supplierForm input[type="email"],
+#supplierForm input[type="number"],
+#supplierForm input[type="date"],
+#supplierForm textarea {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+#supplierForm input:focus,
+#supplierForm textarea:focus {
+  border-color: #1e293b;
+}
+
+#supplierForm textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* Full width container */
+.full {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Actions buttons */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+#supplierForm button {
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #1e293b;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+#supplierForm button:hover {
+  background-color: #15803d;
+}
+
+/* (Clear) */
+#supplierForm button.secondary {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
+#supplierForm button.secondary:hover {
+  background-color: #94a3b8;
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+  #supplierForm {
+    padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="tel"],
+  input[type="email"],
+  input[type="number"],
+  #supplierForm input[type="date"],
+  #supplierForm textarea {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  #supplierForm button {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #supplierForm h1 {
+    font-size: 22px;
+  }
+
+  #supplierForm input,
+  #supplierForm textarea {
+    font-size: 12px;
+  }
+
+  #supplierForm button {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}

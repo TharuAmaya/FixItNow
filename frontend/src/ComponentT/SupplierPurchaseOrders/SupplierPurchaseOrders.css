@@ -1,0 +1,156 @@
+.order-card {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 25px 50px;
+  font-family: Arial, sans-serif;
+  background: #e7e5e5; 
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.order-card h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #222;
+}
+
+.search-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+  width:600px;
+  height:35px;
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+.search-bar input:focus {
+  border-color: #1e293b;
+  outline: none;
+}
+
+.search-bar .search-btn {
+  padding: 10px 18px;
+  background-color: #1e293b;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.search-bar .search-btn:hover {
+  background-color: #0f1a2b;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.orders-table th,
+.orders-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.orders-table th {
+  background-color: #1e293b;
+  color: #fff;
+  font-weight: 600;
+}
+
+.orders-table tbody tr:nth-child(even) {
+  background-color: #ebe9e65d; 
+}
+
+.orders-table tbody tr:hover {
+  background-color: #e2eee852;
+}
+
+.response-btn,
+.download-btn {
+  display: inline-block;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.response-btn {
+  background-color: #0a1e54;
+  color: #fff;
+  width: 130px;
+}
+
+.response-btn:hover {
+  background-color: #2bb0b3;
+}
+
+.download-btn {
+  background-color: #1e293b;
+  color: #fff;
+  width: 150px;
+}
+
+.download-btn:hover {
+  background-color: #546475;
+}
+
+.sup-download-btn {
+  background-color: #1e7e34;
+}
+
+.sup-download-btn:hover {
+  background-color: #145c26;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .order-card {
+    padding: 20px;
+  }
+
+  .orders-table th,
+  .orders-table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar input,
+  .search-bar .search-btn {
+    width: 100%;
+  }
+
+  .response-btn,
+  .download-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

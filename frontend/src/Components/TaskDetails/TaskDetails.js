@@ -12,8 +12,6 @@ function mapsEmbedUrl(address) {
   return `https://www.google.com/maps?q=${q}&output=embed`;
 }
 
-const STATUS_OPTIONS = ["accepted", "in-progress", "on-hold", "completed", "rejected"];
-
 export default function TaskDetails() {
   const { id } = useParams();
   const navigate = useNavigate();

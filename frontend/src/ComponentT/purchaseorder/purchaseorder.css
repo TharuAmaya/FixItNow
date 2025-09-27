@@ -1,0 +1,74 @@
+
+.purchase-order-container table {
+  width: 95%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-order-container th, .purchase-order-container td {
+  padding: 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.purchase-order-container th {
+  background: #1976d2;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.purchase-order-container tr:hover {
+  background-color: #f5f5f5;
+  transition: background 0.2s ease-in-out;
+}
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.update-btn{
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.delete-btn {
+   padding: 6px 5%;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.update-btn {
+  background-color: #4caf50;
+  color: white;
+  width: 30px;   
+  height: 30px;
+}
+
+.update-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+  width: 30px;   
+  height: 30px;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.05);
+}

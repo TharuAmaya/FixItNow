@@ -120,9 +120,69 @@
   .tt-root{ background:#fff; }
   .tt-title{ border:none; background:#fff; color:#000; box-shadow:none; }
   .tt-card{ box-shadow:none; border:1px solid #aaa; }
-  .tt-table thead th{
-    background:#222 !important; color:#fff !important;
-    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  
+  /* Table wrapper */
+  .tt-table-wrap{
+    overflow: visible !important;
+    width: 100% !important;
   }
-  .tt-table tbody tr:nth-child(even) td{ background:#f5f5f5 !important; }
+  
+  /* Table structure */
+  .tt-table{
+    width: 100% !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 !important;
+    background: #fff !important;
+    font-size: 11px !important;
+    display: table !important;
+  }
+  
+  .tt-table thead{
+    display: table-header-group !important;
+  }
+  
+  .tt-table tbody{
+    display: table-row-group !important;
+  }
+  
+  .tt-table tr{
+    display: table-row !important;
+    page-break-inside: avoid;
+  }
+  
+  .tt-table th,
+  .tt-table td{
+    display: table-cell !important;
+    padding: 6px 4px !important;
+    border: 1px solid #333 !important;
+    vertical-align: top !important;
+    word-wrap: break-word !important;
+  }
+  
+  .tt-table thead th{
+    background:#222 !important; 
+    color:#fff !important;
+    -webkit-print-color-adjust:exact; 
+    print-color-adjust:exact;
+    font-weight: bold !important;
+    text-align: center !important;
+  }
+  
+  .tt-table tbody td{
+    background: #fff !important;
+    color: #000 !important;
+  }
+  
+  .tt-table tbody tr:nth-child(even) td{ 
+    background:#f8f8f8 !important; 
+    -webkit-print-color-adjust:exact; 
+    print-color-adjust:exact;
+  }
+  
+  /* Hide view column in print */
+  .tt-table th:last-child,
+  .tt-table td:last-child{
+    display: none !important;
+  }
 }

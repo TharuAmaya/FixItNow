@@ -11,3 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Print media overrides to prevent ComponentT interference */
+@media print {
+  /* Hide ComponentT containers during print */
+  .supplier-responses-container,
+  .purchase-order-container,
+  .admin-response-container {
+    display: none !important;
+  }
+  
+  /* Ensure task management tables maintain their structure */
+  .to-table-wrap, .tt-table-wrap, .tm-table-wrap {
+    overflow: visible !important;
+  }
+}

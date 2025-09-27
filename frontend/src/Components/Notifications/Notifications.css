@@ -1,14 +1,14 @@
-:root{
-  --primary:#0A1E54;   /* 60 */
-  --secondary:#C8B39B; /* 30 */
-  --accent:#F8EFE5;    /* 10 */
-  --ink:#0B1220;
-  --muted:#6b7280;
-  --surface:#ffffff;
-  --surface-2:#f7f8fb;
-  --border:#e5e7eb;
-  --shadow:0 6px 14px rgba(0,0,0,0.06), 0 24px 48px rgba(0,0,0,0.08);
-  --r-lg:14px; --r-md:10px; --r-sm:8px;
+.nt-root{
+  --nt-primary:#0A1E54;   /* 60 */
+  --nt-secondary:#C8B39B; /* 30 */
+  --nt-accent:#F8EFE5;    /* 10 */
+  --nt-ink:#0B1220;
+  --nt-muted:#6b7280;
+  --nt-surface:#ffffff;
+  --nt-surface-2:#f7f8fb;
+  --nt-border:#e5e7eb;
+  --nt-shadow:0 6px 14px rgba(0,0,0,0.06), 0 24px 48px rgba(0,0,0,0.08);
+  --nt-r-lg:14px; --nt-r-md:10px; --nt-r-sm:8px;
 }
 
 /* Page */
@@ -17,8 +17,8 @@
   background:
     radial-gradient(1200px 600px at 85% -10%, rgba(200,179,155,0.18), transparent 60%),
     radial-gradient(900px 500px at -10% 20%, rgba(10,30,84,0.12), transparent 60%),
-    var(--surface-2);
-  color:var(--ink);
+    var(--nt-surface-2);
+  color:var(--nt-ink);
   font-family:ui-sans-serif, system-ui, Inter, Segoe UI, Roboto, Arial;
 }
 .nt-container{ padding:16px 20px; }
@@ -26,7 +26,7 @@
 
 /* Optional hero/banner */
 .nt-hero{
-  position:relative; height:140px; border-radius:var(--r-lg);
+  position:relative; height:140px; border-radius:var(--nt-r-lg);
   overflow:hidden; margin:8px 0 12px;
   background:linear-gradient(120deg, rgba(10,30,84,0.85), rgba(10,30,84,0.55));
 }
@@ -42,7 +42,7 @@
 }
 .nt-toggle{
   display:inline-flex; align-items:center; gap:8px; cursor:pointer;
-  background:var(--primary); color:#fff; border:none; border-radius:10px;
+  background:var(--nt-primary); color:#fff; border:none; border-radius:10px;
   padding:8px 14px; box-shadow:0 4px 12px rgba(0,0,0,0.12);
 }
 .nt-badge{
@@ -53,7 +53,7 @@
 /* Drawer */
 .nt-drawer{
   position:relative; background:#fff; border-radius:14px;
-  border:1px solid var(--border); box-shadow:var(--shadow); overflow:hidden;
+  border:1px solid var(--nt-border); box-shadow:var(--nt-shadow); overflow:hidden;
 }
 .nt-drawer-header{
   position:sticky; top:0; z-index:1; background:#fff;
@@ -64,10 +64,10 @@
 .nt-drawer-actions{ display:flex; gap:8px; }
 .nt-btn{
   padding:6px 10px; border-radius:8px; cursor:pointer;
-  border:1px solid var(--border); background:#fff; color:var(--ink);
+  border:1px solid var(--nt-border); background:#fff; color:var(--nt-ink);
   transition:background .2s, border-color .2s, transform .05s;
 }
-.nt-btn:hover{ background:var(--accent); border-color:var(--secondary); }
+.nt-btn:hover{ background:var(--nt-accent); border-color:var(--nt-secondary); }
 .nt-btn:active{ transform:translateY(1px); }
 .nt-btn-soft{
   background:#f8f8f8;
@@ -78,8 +78,8 @@
   padding:14px; max-height:480px; overflow-y:auto;
 }
 .nt-empty{
-  padding:18px; color:var(--muted); text-align:center;
-  border:1px dashed var(--border); border-radius:10px; background:#fafafa;
+  padding:18px; color:var(--nt-muted); text-align:center;
+  border:1px dashed var(--nt-border); border-radius:10px; background:#fafafa;
 }
 
 /* Notification card */
@@ -95,7 +95,7 @@
 .nt-icon{
   width:28px; height:28px; display:grid; place-items:center;
   border-radius:8px; font-size:16px; font-weight:700;
-  background:#ffffffaa; border:1px solid var(--border);
+  background:#ffffffaa; border:1px solid var(--nt-border);
 }
 
 /* Type themes */
@@ -113,13 +113,13 @@
 
 /* Item content */
 .nt-title{ font-weight:800; margin-bottom:2px; }
-.nt-message{ line-height:1.4; color:var(--ink); }
-.nt-meta{ margin-top:6px; font-size:12px; color:var(--muted); }
+.nt-message{ line-height:1.4; color:var(--nt-ink); }
+.nt-meta{ margin-top:6px; font-size:12px; color:var(--nt-muted); }
 .nt-item-actions{ display:flex; gap:6px; }
 .nt-chip-btn{
   padding:4px 8px; border-radius:8px; border:1px solid #dcdcdc; background:#fff; cursor:pointer;
 }
-.nt-chip-btn:hover{ background:var(--accent); border-color:var(--secondary); }
+.nt-chip-btn:hover{ background:var(--nt-accent); border-color:var(--nt-secondary); }
 
 /* Sticky footer triggers */
 .nt-drawer-footer{
@@ -129,7 +129,7 @@
 
 /* Page title */
 .nt-titlebar{
-  margin:8px 0 12px; padding:10px 14px; font-size:22px; font-weight:800; color:var(--primary);
+  margin:8px 0 12px; padding:10px 14px; font-size:22px; font-weight:800; color:var(--nt-primary);
   background:linear-gradient(180deg, rgba(248,239,229,0.9), rgba(248,239,229,0.5));
-  border:1px solid #efe5d8; border-radius:var(--r-md);
+  border:1px solid #efe5d8; border-radius:var(--nt-r-md);
 }

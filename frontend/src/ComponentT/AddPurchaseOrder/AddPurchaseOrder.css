@@ -1,0 +1,178 @@
+div.form-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Heading */
+.form-container h1 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 20px;
+}
+
+/* Form layout */
+form#purchaseOrderForm {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Full-width label + input */
+.full {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.full label {
+  flex: 1 1 100%;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.full input,
+.full select {
+  flex: 1 1 45%;
+  padding: 6px 8px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+
+.full input:focus,
+.full select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+/* Required field  */
+.req {
+  color: #ef4444;
+  margin-left: 2px;
+  font-size: 13px;
+}
+
+/* Items section */
+.form-container h3 {
+  font-size: 16px;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.item-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.item-row input {
+  flex: 1 1 auto;
+  padding: 6px 8px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+.item-row button {
+  padding: 5px 10px;
+  background-color: #ef4444;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.item-row button:hover {
+  background-color: #dc2626;
+}
+
+/* Add Item  */
+.form-container form button[type="button"] {
+  padding: 6px 12px;
+  background-color: #16a34a;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 12px;
+}
+.form-container form button[type="button1"] {
+  padding: 6px 12px;
+  background-color: #dc2626;
+  color: #fff;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: fit-content;
+  margin-bottom: 12px;
+}
+
+.form-container form button[type="button"]:hover {
+  background-color: #15803d;
+}
+
+/*  buttons submit  clear */
+.actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.actions button {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.actions button[type="submit"] {
+  background-color: #3b82f6;
+  color: #fff;
+}
+
+.actions button[type="submit"]:hover {
+  background-color: #2563eb;
+}
+
+.actions button.secondary {
+  background-color: #6b7280;
+  color: #fff;
+}
+
+.actions button.secondary:hover {
+  background-color: #4b5563;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .full input,
+  .full select {
+    flex: 1 1 100%;
+  }
+  .item-row {
+    flex-direction: column;
+  }
+  .item-row button {
+    width: 100%;
+  }
+  .actions {
+    flex-direction: column;
+  }
+  .actions button {
+    width: 100%;
+  }
+}

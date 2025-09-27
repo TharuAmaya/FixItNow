@@ -1,0 +1,189 @@
+
+#purchaseOrderForm {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#purchaseOrderForm h1,
+div > h1 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Labels */
+#purchaseOrderForm label {
+  display: block;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 5px;
+}
+
+/* Required  */
+.req {
+  color: #ef4444;
+  margin-left: 2px;
+}
+
+#purchaseOrderForm input[type="text"],
+#purchaseOrderForm input[type="number"],
+#purchaseOrderForm select {
+  width: 100%;
+  padding: 6px 10px;
+  font-size: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+#purchaseOrderForm input:focus,
+#purchaseOrderForm select:focus {
+  border-color: #1e293b;
+}
+
+/* Full width container */
+.full {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.item-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.item-row input[type="text"],
+.item-row input[type="number"] {
+  flex: 1;
+  min-width: 120px;
+}
+
+.item-row button {
+  flex: 0 0 auto;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  border: none;
+  background-color: #ef4444;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.item-row button:hover {
+  background-color: #dc2626;
+}
+
+/* Add Item  */
+.full > button[type="button"] {
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: #15803d;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.full > button[type="button"]:hover {
+  background-color: #15803d;
+}
+
+/* Action buttons  */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.actions button {
+  flex: 1;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #1e293b;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.actions button:hover {
+  background-color: #15803d;
+}
+
+.actions button.secondary {
+  background-color: #cbd5e1;
+  color: #1e293b;
+}
+
+.actions button.secondary:hover {
+  background-color: #94a3b8;
+}
+
+/* Responsive  */
+@media (max-width: 768px) {
+  #purchaseOrderForm {
+    padding: 15px;
+  }
+
+  #purchaseOrderForm input,
+  #purchaseOrderForm select {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  .item-row input {
+    flex: 1 1 100%;
+  }
+
+  .item-row button {
+    flex: 1 1 auto;
+  }
+
+  .actions button {
+    flex: 1 1 100%;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #purchaseOrderForm h1 {
+    font-size: 22px;
+  }
+
+  #purchaseOrderForm input,
+  #purchaseOrderForm select {
+    font-size: 12px;
+  }
+
+  .actions button {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .item-row button,
+  .full > button[type="button"] {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}

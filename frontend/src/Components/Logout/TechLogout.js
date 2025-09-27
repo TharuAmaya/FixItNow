@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from '../Nav/TechNav';
 import { useNavigate } from 'react-router-dom';
 import './Logout.css';
 import TechNav from '../Nav/TechNav';

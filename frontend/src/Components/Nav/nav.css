@@ -48,35 +48,35 @@
 /* Auth buttons */
 .navbar-auth{ display:flex; gap:10px; }
 
-/* Shared button */
-.notifications-btn, .logout-btn{
-  padding:6px 18px; min-width:110px; border:none; border-radius:20px;
-  font-size:1rem; font-weight:600; cursor:pointer;
-  transition:background .2s, color .2s, box-shadow .2s, transform .05s;
-  text-align:center;
+/* Shared button - Higher specificity to override ComponentT styles */
+.navbar .notifications-btn, .navbar .logout-btn{
+  padding:6px 18px !important; min-width:110px !important; border:none !important; border-radius:20px !important;
+  font-size:1rem !important; font-weight:600 !important; cursor:pointer !important;
+  transition:background .2s, color .2s, box-shadow .2s, transform .05s !important;
+  text-align:center !important;
 }
-.notifications-btn:active, .logout-btn:active{ transform:translateY(1px); }
+.navbar .notifications-btn:active, .navbar .logout-btn:active{ transform:translateY(1px) !important; }
 
 /* Notifications: light on dark */
-.notifications-btn{
-  background:var(--accent); color:var(--primary);
+.navbar .notifications-btn{
+  background:var(--accent) !important; color:var(--primary) !important;
 }
-.notifications-btn:hover{
-  background:#c8b39b; color:#fff;
+.navbar .notifications-btn:hover{
+  background:#c8b39b !important; color:#fff !important;
 }
-.notifications-btn:focus{
-  outline:none; box-shadow:0 0 0 3px rgba(200,179,155,.35);
+.navbar .notifications-btn:focus{
+  outline:none !important; box-shadow:0 0 0 3px rgba(200,179,155,.35) !important;
 }
 
 /* Logout: secondary filled */
-.logout-btn{
-  background:#c8b39b; color:#fff;
+.navbar .logout-btn{
+  background:#c8b39b !important; color:#fff !important;
 }
-.logout-btn:hover{
-  background:var(--accent); color:var(--primary);
+.navbar .logout-btn:hover{
+  background:var(--accent) !important; color:var(--primary) !important;
 }
-.logout-btn:focus{
-  outline:none; box-shadow:0 0 0 3px rgba(200,179,155,.35);
+.navbar .logout-btn:focus{
+  outline:none !important; box-shadow:0 0 0 3px rgba(200,179,155,.35) !important;
 }
 
 /* Burger toggle */
@@ -105,7 +105,7 @@ a.navbar-link:focus{ outline:none; box-shadow:0 0 0 3px rgba(200,179,155,.35); b
 
 /* High-contrast focus for keyboard users */
 @media (prefers-reduced-motion:no-preference){
-  .navbar, .navbar-links li, .notifications-btn, .logout-btn{
+  .navbar, .navbar-links li, .navbar .notifications-btn, .navbar .logout-btn{
     transition:background .2s ease, color .2s ease, box-shadow .2s ease;
   }
 }
