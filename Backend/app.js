@@ -4,6 +4,13 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./Routes/TaskRoutes");
 
+//Thanuja
+const routert1=require("./Routes/SupplierManagementRouteT");
+const routers=require("./Routes/PurchaseManagementRouteT")
+const supplierRoutes = require("./Routes/SupplierProfileRouteT");
+const supplierResponseRoutes=require("./Routes/supplierresponseRouteT");
+const notificationRoutes = require("./Routes/notificationRoutesT");
+
 const multer = require("multer");
 const cors = require("cors");
 
@@ -71,3 +78,12 @@ app.get("/getFile", async (req, res) => {
     res.status(500).send({ message: "Error fetching PDFs: " + error.message, status: "error" });
   }
 });
+
+
+//Thanuja
+app.use("/suppliers", routert1)
+app.use("/purchases",routers)
+
+app.use("/api/supplier", supplierRoutes);
+app.use("/responses", supplierResponseRoutes);
+app.use("/notifications", notificationRoutes);
