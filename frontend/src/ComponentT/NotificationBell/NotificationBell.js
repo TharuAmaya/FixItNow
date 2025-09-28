@@ -30,7 +30,7 @@ function NotificationBell() {
 
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/notifications");
+      const res = await axios.get("http://localhost:5000/notifications-supplier");
       const activeNotifications = res.data.notifications.filter(
         (n) => !n.isDeleted
       );
@@ -42,7 +42,7 @@ function NotificationBell() {
 
   const markAsRead = async (id) => {
     try {
-      await axios.put(`http://localhost:5000/notifications/${id}/read`);
+      await axios.put(`http://localhost:5000/notifications-supplier/${id}/read`);
       fetchNotifications();
       navigate("/Supplierresponse"); // after marking as read
     } catch (err) {

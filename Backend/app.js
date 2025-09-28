@@ -11,6 +11,15 @@ const supplierRoutes = require("./Routes/SupplierProfileRouteT");
 const supplierResponseRoutes=require("./Routes/supplierresponseRouteT");
 const notificationRoutes = require("./Routes/notificationRoutesT");
 
+//Dilanka
+const bodyParser = require("body-parser");
+// Import Routers
+const userRouter = require("./Routes/UserRoutes");
+const requestRouter = require("./Routes/RequestRoutes");
+const profileRoutes = require("./Routes/ProfileRoute");
+const requestsmy = require("./Routes/MyRequestRoute");
+const notificationRoutesD = require("./Routes/NotificationRoute");
+
 const multer = require("multer");
 const cors = require("cors");
 
@@ -86,4 +95,15 @@ app.use("/purchases",routers)
 
 app.use("/api/supplier", supplierRoutes);
 app.use("/responses", supplierResponseRoutes);
-app.use("/notifications", notificationRoutes);
+app.use("/notifications-supplier", notificationRoutes);
+
+
+//Dilanka
+app.use(bodyParser.json());
+
+// Routes
+app.use("/users", userRouter);
+app.use("/requests", requestRouter);
+app.use("/profile", profileRoutes);
+app.use("./requestsmyy", requestsmy);
+app.use("/notifications", notificationRoutesD);
