@@ -12,6 +12,8 @@ const Sidebar = forwardRef(({ role }, ref) => {
     toggleSidebar,
   }));
 
+  // Sidebar visibility is now controlled by App.js
+
   return (
     <>
       <div className="menu-icon" onClick={toggleSidebar}>

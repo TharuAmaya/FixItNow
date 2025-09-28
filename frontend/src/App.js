@@ -136,36 +136,44 @@ const toggleSidebar = () => {
       {showNav && <Nav handleLogout={handleLogout} toggleSidebar={toggleSidebar} />}
       {showNavS && <NavS handleLogout={handleLogout} />}
 
-      {sidebarOpen && <SIdebar closeSidebar={toggleSidebar} />}
+      {sidebarOpen && (role === "admin" && (location.pathname.startsWith("/Supplierlist") ||
+        location.pathname.startsWith("/Purchaseorders") ||
+        location.pathname === "/add-supplier" ||
+        location.pathname.startsWith("/add-order") ||
+        location.pathname.startsWith("/Supplierresponse") ||
+        location.pathname.startsWith("/notifi") ||
+        location.pathname.startsWith("/Updateorder") ||
+        location.pathname === "/sidebar" ||
+        location.pathname.startsWith("/ADmin"))) && <SIdebar closeSidebar={toggleSidebar} />}
 
       <React.Fragment>
         <Routes>
           <Route path="/" element={<Home />} />
 
-          role === "coordinator" && (
+          {role === "coordinator" && (
             <>
-          <Route path="/dashboard" element={<MaintenanceCoordinatorDashboard />} />
-          <Route path="/overview" element={<TaskOverview />} />
-          <Route path="/overview/:id" element={<UpdateTask />} />
-          <Route path="/technician-management" element={<TechnicianManagement />} />
-          <Route path="/task-assignment" element={<ManualTaskAssignment />} />
-          <Route path="/send-pdf" element={<SendPdf />} />
-          <Route path="/performance-reports" element={<PerformanceReports />} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/logout" element={<Logout />} />
-          </>
-          )
+              <Route path="/dashboard" element={<MaintenanceCoordinatorDashboard />} />
+              <Route path="/overview" element={<TaskOverview />} />
+              <Route path="/overview/:id" element={<UpdateTask />} />
+              <Route path="/technician-management" element={<TechnicianManagement />} />
+              <Route path="/task-assignment" element={<ManualTaskAssignment />} />
+              <Route path="/send-pdf" element={<SendPdf />} />
+              <Route path="/performance-reports" element={<PerformanceReports />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/logout" element={<Logout />} />
+            </>
+          )}
 
-          role === "technician" && (
-          <>
-          {/*<Route path="/" element={<TechnicianDashboard />} />*/}
-          <Route path="/tech-dashboard" element={<TechnicianDashboard />} />
-          <Route path="/tech-overview" element={<TechTaskOverview />} />
-          <Route path="/tech-overview/:id" element={<TaskDetails />} />
-          <Route path="/tech-notifications" element={<TechNotifications />} />
-          <Route path="/tech-logout" element={<TechLogout />} />
-          </>
-          )
+          {role === "technician" && (
+            <>
+              {/*<Route path="/" element={<TechnicianDashboard />} />*/}
+              <Route path="/tech-dashboard" element={<TechnicianDashboard />} />
+              <Route path="/tech-overview" element={<TechTaskOverview />} />
+              <Route path="/tech-overview/:id" element={<TaskDetails />} />
+              <Route path="/tech-notifications" element={<TechNotifications />} />
+              <Route path="/tech-logout" element={<TechLogout />} />
+            </>
+          )}
 
           <Route path="/home" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
@@ -178,6 +186,8 @@ const toggleSidebar = () => {
 {/*Thanuja*/}
  {role === "admin" && (
           <>
+            <Route path="/sidebar" element={<SIdebar closeSidebar={() => {}} />} />
+
             <Route path="/Supplierlist" element={<SupplierLIst />} />
             <Route path="/Supplierlist/:id" element={<UpdateSupplier />} />
             <Route path="/Purchaseorders" element={<PurchaseORders />} />
@@ -205,8 +215,6 @@ const toggleSidebar = () => {
         )}
 
          <Route path="/LLogin" element={<LOgin setRole={setRole} />} />
-         <Route path="/sidebar" element={<SIdebar closeSidebar={() => {}} />} />
-
 
         </Routes>
       </React.Fragment>
