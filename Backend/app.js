@@ -11,6 +11,10 @@ const supplierRoutes = require("./Routes/SupplierProfileRouteT");
 const supplierResponseRoutes=require("./Routes/supplierresponseRouteT");
 const notificationRoutes = require("./Routes/notificationRoutesT");
 
+// Import models for the orders route
+const Response = require("./Model/supplierresponseModelT");
+const Order = require("./Model/PurchaseManagementModelT");
+
 //Dilanka
 const bodyParser = require("body-parser");
 // Import Routers
@@ -92,6 +96,29 @@ app.get("/getFile", async (req, res) => {
 //Thanuja
 app.use("/suppliers", routert1)
 app.use("/purchases",routers)
+
+// ✅ Calendar orders route - MUST be before the general supplier routes
+app.get("/api/supplier/orders", async (req, res) => {
+  try {
+    // Fetch all responses (accept, pending, reject)
+    const responses = await Response.find({});
+    const orders = await Order.find({ orderId: { $in: responses.map(r => r.orderId) } });
+
+    // Merge response type into each order
+    const enrichedOrders = orders.map(order => {
+      const resp = responses.find(r => r.orderId === order.orderId);
+      return {
+        ...order._doc,
+        responseType: resp ? resp.responseType.toLowerCase() : "pending", // default
+      };
+    });
+
+    res.json(enrichedOrders);
+  } catch (error) {
+    console.error("Error fetching supplier orders:", error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 app.use("/api/supplier", supplierRoutes);
 app.use("/responses", supplierResponseRoutes);
